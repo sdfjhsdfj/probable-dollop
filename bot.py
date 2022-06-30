@@ -18,13 +18,14 @@ username_for = low_word
 password_for = low_word + upper_word + number + symbols
 long_password = 16
 long_username = 12
-emil="rawr@knowledgemd.com"
-options.add_argument('--no-first-run --no-service-autorun --password-store=basic') #wlacz to jak juz nie bedzie dev test
-#options.user_data_dir = "rawr"
-options.add_argument("--window-size=1920,1080")
-#options.add_argument('--user-data-dir=rawr')
-options.add_argument("--remote-debugging-port=38223")
-driver = uc.Chrome(options=options, version_main=103)  # version_main allows to specify your chrome version instead of following chrome global version
-driver.set_window_size(1920, 1080)
-driver.get("https://www.twitch.tv/bluezczatupl")
-time.sleep(10000)
+while True:
+  options.add_argument('--no-first-run --no-service-autorun --password-store=basic') #wlacz to jak juz nie bedzie dev test
+  #options.user_data_dir = "rawr"
+  options.add_argument("--window-size=1920,1080")
+  #options.add_argument('--user-data-dir=rawr')
+  options.add_argument("--remote-debugging-port=38223")
+  driver = uc.Chrome(options=options, version_main=103)  # version_main allows to specify your chrome version instead of following chrome global version
+  driver.set_window_size(1920, 1080)
+  driver.get("https://www.twitch.tv/bluezczatupl")
+  time.sleep(600)
+  driver.close()
