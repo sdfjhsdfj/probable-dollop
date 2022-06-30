@@ -37,7 +37,7 @@ print("yay")
 emailgw = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div[2]/div/div/div[1]/div/div/input").get_attribute("value") #getemail
 print(emailgw)
 emailrepl = emailgw
-
+driver.set_window_size(1920, 1080)
 
 usernamerepl = "".join(random.sample(username_for, long_username))
 driver.switch_to.window(driver.window_handles[0])
