@@ -29,5 +29,5 @@ driver.set_window_size(1920, 1080)
 time.sleep(random.randint(15, 60))
 driver.get("https://www.twitch.tv/bluezczatupl")
 while True:
-  time.sleep(1)
+  time.sleep(0.1)
   driver.switch_to.window(driver.window_handles[0])
