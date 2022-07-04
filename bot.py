@@ -10,7 +10,7 @@ import requests
 from selenium.webdriver.common.by import By
 
 options = uc.ChromeOptions()
-
+a = True
 low_word = "abcdefghijklkmnopqrstuvwxyz"
 upper_word = "ABDCEFGHIJKLMNOPQRSTUVWXYZ"
 number = "1234567890"
@@ -28,6 +28,15 @@ driver = uc.Chrome(options=options, version_main=103)  # version_main allows to 
 driver.set_window_size(1920, 1080)
 time.sleep(random.randint(15, 60))
 driver.get("https://www.twitch.tv/bluezczatupl")
-while True:
+rawr = time.time()+60
+while a == True:
   time.sleep(0.1)
   driver.switch_to.window(driver.window_handles[0])
+  if(time.time()>rawr):
+    rawr = time.time()+60
+    headers = {
+    'cache-control': "no-cache"
+    }
+    response = requests.request("GET", "https://cloudy124.github.io/fantastic-octo-fiesta/38.txt", headers=headers)
+    if(response.text.strip()=="meow"):
+        a = False
