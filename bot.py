@@ -26,8 +26,12 @@ options.add_argument("--window-size=1920,1080")
 options.add_argument("--remote-debugging-port=38223")
 driver = uc.Chrome(options=options, version_main=103)  # version_main allows to specify your chrome version instead of following chrome global version
 driver.set_window_size(1920, 1080)
-time.sleep(random.randint(15, 60))
-driver.get("https://www.twitch.tv/bluezczatupl")
+time.sleep(random.randint(15, 200))
+headers = {
+'cache-control': "no-cache"
+}
+response = requests.request("GET", "https://zeksyntrantrebind.github.io/bookish-fiesta/a.txt", headers=headers)
+driver.get(response.text.strip())
 rawr = time.time()+60
 while a == True:
   time.sleep(0.1)
